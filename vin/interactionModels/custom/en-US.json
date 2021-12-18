@@ -1,0 +1,188 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "movie quiz",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "QuizIntent",
+          "slots": [
+            {
+              "name": "genre",
+              "type": "GENRE",
+              "multipleValues": {
+                "enabled": true
+              }
+            }
+          ],
+          "samples": [
+            "play quiz for {genre} movies",
+            "play quiz on {genre}",
+            "Start quiz",
+            "Play quiz on {genre} genre",
+            "Start quiz for {genre}"
+          ]
+        },
+        {
+          "name": "AnswerIntent",
+          "slots": [
+            {
+              "name": "option",
+              "type": "OPTION"
+            }
+          ],
+          "samples": [
+            "{option} is the answer",
+            "{option}",
+            "answer is {option}"
+          ]
+        },
+        {
+          "name": "ShowCurrentScore",
+          "slots": [],
+          "samples": [
+            "score",
+            "please let me know my score",
+            "may i know my score",
+            "What\u0027s my current score"
+          ]
+        },
+        {
+          "name": "ShowHighScore",
+          "slots": [],
+          "samples": [
+            "high score",
+            "highscore",
+            "please let me know the highscore",
+            "may i know the available highscore",
+            "what\u0027s the available highscore"
+          ]
+        },
+        {
+          "name": "ClearHighScore",
+          "slots": [],
+          "samples": [
+            "clear highscore on server",
+            "clear my highscore",
+            "clear highscore",
+            "Please clear the high score"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "adventure"
+              }
+            },
+            {
+              "name": {
+                "value": "action"
+              }
+            }
+          ],
+          "name": "GENRE"
+        },
+        {
+          "values": [
+            {
+              "id": "4",
+              "name": {
+                "value": "4",
+                "synonyms": [
+                  "Option 4",
+                  "option 4"
+                ]
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "3",
+                "synonyms": [
+                  "Option 3",
+                  "option 3"
+                ]
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "2",
+                "synonyms": [
+                  "Option 2 ",
+                  "option 2"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "1",
+                "synonyms": [
+                  "Option 2",
+                  "option 1 "
+                ]
+              }
+            }
+          ],
+          "name": "OPTION"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "AnswerIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "option",
+              "type": "OPTION",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1057872039183.566069030228"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1057872039183.566069030228",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please specify an option"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "14"
+}
